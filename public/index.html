@@ -10,7 +10,12 @@
     <input id="reset" type="button" value="RESET" />
     <script src="app.js" type="text/javascript"></script>
     <script type="text/javascript">
-      new App(document);
+      setTimeout(
+        function() {
+          new App(document);
+        },
+        1
+      )
     </script>
   </body>
 </html>
