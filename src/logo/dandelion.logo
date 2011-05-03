@@ -1,0 +1,22 @@
+repeat 16
+ left 89
+ penup
+ forward 25
+ pendown
+ repeat 20
+  pencolour blue
+  forward 20
+  right 88
+  pencolour green
+  forward 25
+  left 19
+  pencolour red
+  forward 12
+  pencolour yellow
+  forward 4
+  left 23
+ end
+end
+left 110
+pencolour green
+forward 1000

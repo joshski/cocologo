@@ -1,0 +1,21 @@
+penup
+forward 50
+right 70
+forward 150
+right 90
+pendown
+repeat 60
+  repeat 30
+    pencolour pink
+    forward 2
+    pencolour orange
+    forward 6
+    pencolour yellow
+    forward 12
+    right 9
+  end
+  right 24
+end
+penup
+right 60
+forward 1000

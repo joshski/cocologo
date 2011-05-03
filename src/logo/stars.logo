@@ -1,0 +1,16 @@
+pencolour blue
+left 72
+repeat 2
+  repeat 5
+    pendown
+    repeat 5
+      forward 40
+      right 144
+    end
+    penup
+    right 80
+    forward 70 
+  end
+  left 45
+  forward 60
+end

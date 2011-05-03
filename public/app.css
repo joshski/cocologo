@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 30px;
+}
+
+#turtleCanvas {
+  position: absolute;
+}
+
+#lineCanvas {
+  position: absolute;
+  border: 3px solid #ccc;
+}
+
+#code {
+  position: absolute;
+  left: 1040px;
+  border: 3px solid #ccc;
+  width: 300px;
+  height: 570px;
+  display: block;
+  padding: 10px;
+  font-family: Monaco, Consolas, Courier, Sans-serif;
+}
+
+#turtle {
+  position: absolute;
+  width: 24px;
+  height: 40px;
+}
+
+#go {
+  position: absolute;
+  top: 605px;
+  left: 1040px;
+  width: 164px;
+  height: 30px;
+  background-color: #efefef;
+  border: 3px solid #ccc;
+  font-weight: bold;
+}
+
+#reset {
+  position: absolute;
+  top: 605px;
+  left: 1210px;
+  width: 130px;
+  height: 30px;
+  background-color: #efefef;
+  border: 3px solid #ccc;
+  font-weight: bold;
+}
