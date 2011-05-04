@@ -285,8 +285,6 @@
   Ink = (function() {
     function Ink(context) {
       this.context = context;
-      this.draw(10, 10, [0, 0, 255]);
-      this.draw(10, 11, [0, 0, 255]);
     }
     Ink.prototype.draw = function(x, y, rgb) {
       this.context.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
