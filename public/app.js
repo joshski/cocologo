@@ -1,7 +1,7 @@
 (function() {
   var App, exampleScript;
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-  exampleScript = ["forward 50", "right 90", "forward 50", "right 90", "penup", "forward 25", "pendown", "forward 25", "right 90", "forward 50"].join("\n");
+  exampleScript = ["repeat 16", "  left 89", "  penup", "  forward 25", "  pendown", "  repeat 20", "    pencolour blue", "    forward 20", "    right 88", "    pencolour green", "    forward 25", "    left 19", "    pencolour red", "    forward 12", "    pencolour yellow", "    forward 4", "    left 23", "  end", "end", "left 110", "pencolour green", "forward 1000"].join("\n");
   App = (function() {
     function App(document) {
       var drawing, ink, pen;
@@ -12,7 +12,6 @@
       drawing = new Drawing(pen, ink, plotLine);
       this.turtle = new Turtle(drawing);
       parser.yy = Logo;
-      this.command = parser.parse("left 1\nright 1");
       document.getElementById("go").onclick = __bind(function() {
         this.go();
         return false;
@@ -24,13 +23,17 @@
       setInterval(__bind(function() {
         return this.tick();
       }, this), 20);
+      setTimeout(__bind(function() {
+        return this.command = parser.parse("left 1\nright 1");
+      }, this), 400);
     }
     App.prototype.go = function() {
       try {
-        return this.command = parser.parse(this.codeArea.value);
+        this.command = parser.parse(this.codeArea.value);
       } catch (error) {
-        return alert(error);
+        alert(error);
       }
+      return clearInterval(this.interval);
     };
     App.prototype.tick = function() {
       var i, _results;
@@ -282,6 +285,8 @@
   Ink = (function() {
     function Ink(context) {
       this.context = context;
+      this.draw(10, 10, [0, 0, 255]);
+      this.draw(10, 11, [0, 0, 255]);
     }
     Ink.prototype.draw = function(x, y, rgb) {
       this.context.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";

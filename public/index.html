@@ -3,19 +3,14 @@
     <link href="app.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <canvas id="lineCanvas" width="1000" height="600"></canvas>
-    <canvas id="turtleCanvas" width="1000" height="600"></canvas>
-    <textarea id="code"></textarea>
+    <canvas id="lineCanvas" width="800" height="600"></canvas>
+    <canvas id="turtleCanvas" width="800" height="600"></canvas>
+    <textarea id="code" spellcheck="false"></textarea>
     <input id="go" type="button" value="GO" />
     <input id="reset" type="button" value="RESET" />
     <script src="app.js" type="text/javascript"></script>
     <script type="text/javascript">
-      setTimeout(
-        function() {
-          new App(document);
-        },
-        1
-      )
+      new App(document);
     </script>
   </body>
 </html>

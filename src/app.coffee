@@ -1,13 +1,27 @@
-exampleScript = ["forward 50",
-                 "right 90",
-                 "forward 50",
-                 "right 90",
-                 "penup",
-                 "forward 25",
-                 "pendown",
-                 "forward 25"
-                 "right 90",
-                 "forward 50"].join("\n")
+exampleScript = [
+  "repeat 16",
+  "  left 89",
+  "  penup",
+  "  forward 25",
+  "  pendown",
+  "  repeat 20",
+  "    pencolour blue",
+  "    forward 20",
+  "    right 88",
+  "    pencolour green",
+  "    forward 25",
+  "    left 19",
+  "    pencolour red",
+  "    forward 12",
+  "    pencolour yellow",
+  "    forward 4",
+  "    left 23",
+  "  end",
+  "end",
+  "left 110",
+  "pencolour green",
+  "forward 1000"
+].join("\n")
 
 class App
   constructor: (document) -> 
@@ -21,8 +35,6 @@ class App
     
     parser.yy = Logo
     
-    @command = parser.parse("left 1\nright 1")
-    
     document.getElementById("go").onclick = =>
       this.go()
       false
@@ -35,11 +47,16 @@ class App
       this.tick()
     , 20
     
+    setTimeout =>
+      @command = parser.parse("left 1\nright 1")
+    , 400
+    
   go: ->
     try
       @command = parser.parse(@codeArea.value)
     catch error
       alert(error)
+    clearInterval(@interval)
       
   tick: ->
     for i in [1..20]
